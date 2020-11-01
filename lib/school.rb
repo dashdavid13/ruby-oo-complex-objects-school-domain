@@ -1,13 +1,12 @@
-# code here!
-require 'pry'
+# code here
 class School
-    attr_reader :name, :roster
-    
+    attr_accessor :name, :roster
     def initialize(name)
-        @name = name 
         @roster = {}
+        @name = name
     end 
-   
+
+     
     def add_student(name,grade)
         if @roster.has_key?(grade)
             @roster[grade] << name
@@ -18,11 +17,12 @@ class School
 
     def grade(grade)
         self.roster[grade]
+
     end 
+
     def sort
         self.roster.each do |grade,student|
             student.sort!
         end 
     end 
-   
 end 
